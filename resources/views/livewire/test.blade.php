@@ -9,6 +9,8 @@
 
   <h1>hello world</h1>
 
+
+
   <form wire:submit="createusers" action="">
         <input wire:model="name" type="text" placeholder="name">
 
@@ -28,7 +30,10 @@
         <span class="text-red-500 text-xs">{{$message}}</span>
         @enderror <br> <br> <br>
 
-        <button>create users</button>
+        <button>create users</button> <br><br>
+        @if(session('messagevariable'))
+        <span>{{session('messagevariable')}}</span>
+    @endif
   </form>
 
   <hr>
