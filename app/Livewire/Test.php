@@ -11,8 +11,13 @@ class Test extends Component
     public $password;
     public function createusers()
     {
-        User::create([
+        $this->validate([
+            'name'=>'required|min:3|max:25',
+            'email'=>'required|email|unique:users',
+            'password'=>'required|min:5'
+        ]);
 
+        User::create([
             'name'=>$this->name,
             'email'=>$this->email,
             'password'=>$this->password

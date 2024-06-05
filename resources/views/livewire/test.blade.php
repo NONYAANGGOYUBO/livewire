@@ -12,9 +12,21 @@
   <form wire:submit="createusers" action="">
         <input wire:model="name" type="text" placeholder="name">
 
+        @error('name')
+            <span class="text-red-500 text-xs">{{$message}}</span>
+        @enderror<br><br>
+
         <input wire:model="email" type="text" placeholder="email">
 
-        <input wire:model="password" type="text" placeholder="password">  <br> <br> <br>
+        @error('email')
+        <span class="text-red-500 text-xs">{{$message}}</span>
+        @enderror<br><br>
+
+        <input wire:model="password" type="text" placeholder="password">
+
+        @error('password')
+        <span class="text-red-500 text-xs">{{$message}}</span>
+        @enderror <br> <br> <br>
 
         <button>create users</button>
   </form>
