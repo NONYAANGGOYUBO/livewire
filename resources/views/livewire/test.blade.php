@@ -42,6 +42,7 @@
   @endforeach
 
   <!-- sdfhjksdhfshdfjdhgdf -->
+    {{$users->links()}}
 
 </div>
 

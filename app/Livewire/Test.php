@@ -3,9 +3,12 @@
 namespace App\Livewire;
 use App\Models\User;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Test extends Component
 {
+    use WithPagination;
+
     public $name;
     public $email;
     public $password;
@@ -34,7 +37,7 @@ class Test extends Component
     public function render()
     {
         // $title="khan bhai";
-        $users=User::all();
+        $users=User::paginate(5);
         return view('livewire.test',[
             // 'title' => $title,
             'users' => $users,
