@@ -9,6 +9,7 @@
 
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
+        {{-- <a href="{{ @livewire('try2') }}">Link Text</a> --}}
 
             {{-- first method to call livewire component --}}
             @livewire('clicker')
@@ -19,6 +20,8 @@
 
             {{-- calling another blade file of livewire --}}
             @livewire('test')
+            <hr>
+            @livewire('try2')
 
     </body>
 </html>
